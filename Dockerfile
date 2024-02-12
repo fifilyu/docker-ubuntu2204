@@ -60,7 +60,7 @@ RUN sed -i "s/#ClientAliveCountMax 3/ClientAliveCountMax 10/" /etc/ssh/sshd_conf
 ####################
 # 安装Python3.12
 ####################
-RUN apt install -y libssl-dev libffi-dev zlib1g-dev tk-dev libsqlite3-dev libbz2-dev ncurses-dev liblzma-dev uuid-dev libreadline-dev libgdbm-dev libgdbm-compat-dev
+RUN apt-get install -y libssl-dev libffi-dev zlib1g-dev tk-dev libsqlite3-dev libbz2-dev ncurses-dev liblzma-dev uuid-dev libreadline-dev libgdbm-dev libgdbm-compat-dev
 
 ###########################
 ## 安装Python312
@@ -87,7 +87,7 @@ RUN ./pip312 install --root-user-action=ignore -U yq toml-cli
 COPY file/usr/local/bin/jq /usr/local/bin/jq
 RUN chmod 755 /usr/local/bin/jq
 
-RUN apt install -y xmlstarlet crudini
+RUN apt-get install -y xmlstarlet crudini
 
 ####################
 # BASH设置
