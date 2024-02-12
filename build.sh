@@ -1,0 +1,1 @@
+docker build -t fifilyu/ubuntu2204:latest .
