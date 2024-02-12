@@ -1,14 +1,15 @@
-deb https://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse
-deb-src https://mirrors.aliyun.com/ubuntu/ jammy main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu jammy main restricted
 
-deb https://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse
-deb-src https://mirrors.aliyun.com/ubuntu/ jammy-security main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu jammy-updates main restricted
 
-deb https://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse
-deb-src https://mirrors.aliyun.com/ubuntu/ jammy-updates main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu jammy universe
+deb http://mirrors.aliyun.com/ubuntu jammy-updates universe
 
-deb https://mirrors.aliyun.com/ubuntu/ jammy-proposed main restricted universe multiverse
-deb-src https://mirrors.aliyun.com/ubuntu/ jammy-proposed main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu jammy multiverse
+deb http://mirrors.aliyun.com/ubuntu jammy-updates multiverse
 
-deb https://mirrors.aliyun.com/ubuntu/ jammy-backports main restricted universe multiverse
-deb-src https://mirrors.aliyun.com/ubuntu/ jammy-backports main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu jammy-backports main restricted universe multiverse
+
+deb http://mirrors.aliyun.com/ubuntu jammy-security main restricted
+deb http://mirrors.aliyun.com/ubuntu jammy-security universe
+deb http://mirrors.aliyun.com/ubuntu jammy-security multiverse
