@@ -32,15 +32,16 @@ RUN apt-get -y upgrade
 # 初始化
 ####################
 RUN apt-get install -y mlocate openssh-server iproute2 curl wget tcpdump vim telnet screen sudo rsync tcpdump openssh-client tar bzip2 xz-utils pwgen aptitude apt-file
+# 常用编译环境组件
+RUN apt-get install -y gcc make libssl-dev
 
-RUN grep 'set fencs=utf-8,gbk' /etc/vimrc || echo 'set fencs=utf-8,gbk' >> /etc/vim/vimrc
+RUN grep 'set fencs=utf-8,gbk' /etc/vimrc || echo 'set fencs=utf-8,gbk' >>/etc/vim/vimrc
 
 ####################
 # 设置文件句柄
 ####################
-RUN grep '*               soft   nofile            65535' /etc/security/limits.conf || echo "*               soft   nofile            65535" >> /etc/security/limits.conf
-RUN grep '*               hard   nofile            65535' /etc/security/limits.conf || echo "*               hard   nofile            65535" >> /etc/security/limits.conf
-
+RUN grep '*               soft   nofile            65535' /etc/security/limits.conf || echo "*               soft   nofile            65535" >>/etc/security/limits.conf
+RUN grep '*               hard   nofile            65535' /etc/security/limits.conf || echo "*               hard   nofile            65535" >>/etc/security/limits.conf
 
 ####################
 # 配置SSH服务
@@ -70,7 +71,7 @@ WORKDIR /usr/local
 RUN test -L python3 || ln -s python-3.12.2 python3
 
 ARG py_bin_dir=/usr/local/python3/bin
-RUN echo "export PATH=${py_bin_dir}:\${PATH}" > /etc/profile.d/python3.sh
+RUN echo "export PATH=${py_bin_dir}:\${PATH}" >/etc/profile.d/python3.sh
 
 WORKDIR ${py_bin_dir}
 RUN test -L pip312 || ln -v -s pip3 pip312
@@ -92,7 +93,7 @@ RUN apt-get install -y xmlstarlet crudini
 ####################
 # BASH设置
 ####################
-RUN echo "alias ll='ls -l --color=auto --group-directories-first'" >> /root/.bashrc
+RUN echo "alias ll='ls -l --color=auto --group-directories-first'" >>/root/.bashrc
 
 ####################
 # 清理
