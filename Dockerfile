@@ -96,6 +96,12 @@ RUN apt-get install -y xmlstarlet crudini
 RUN echo "alias ll='ls -l --color=auto --group-directories-first'" >>/root/.bashrc
 
 ####################
+# Locale设置
+####################
+RUN locale-gen en_US.utf8
+RUN update-locale LANG=en_US.utf8
+
+####################
 # 清理
 ####################
 RUN apt-get clean
